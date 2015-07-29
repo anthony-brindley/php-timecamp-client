@@ -10,6 +10,8 @@ $ composer require osk/timecamp-client
 
 ## Usage
 
+[Full Doc](https://github.com/oskosk/php-timecamp-client)
+
 ```php
 
 $timecamp = new Timecamp\Client("52253438676fd6dffe7a636f0e");

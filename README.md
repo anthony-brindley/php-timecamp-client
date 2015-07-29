@@ -12,6 +12,9 @@ $ composer require osk/timecamp-client
 
 ```php
 
+// Require composer autoloader
+require "vendor/autoload.php";
+
 $timecamp = new Timecamp\Client("52253438676fd6dffe7a636f0e");
 $entries= $timecamp->timeEntries(array(
   'from'=> '2015-06-01',

@@ -61,6 +61,12 @@ class Client extends \GuzzleHttp\Client {
     return $entries;
   }
 
+  function addTimeEntry($entry) {
+    $url = sprintf("entries/api_token/%s", $this->api_token );
+    $response = $this->post($url, ['json' => $entry]);
+    return $response;
+  }
+
   function timerRunning() {
     $url = sprintf("timer_running/format/serialized/api_token/%s",
       $this->api_token);

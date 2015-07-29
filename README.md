@@ -1,6 +1,6 @@
-#timecamp-php
+#php-timecamp-client
 
-A [Timecamp](http://www.timecamp.com/) PHP client. Presents returned data from the [Timecamp API](https://github.com/timecamp2/timecamp-api) JSON as associative arrays.
+A [Timecamp](http://www.timecamp.com/) PHP client. Presents returned data from the [Timecamp API](https://github.com/timecamp2/timecamp-api) as associative arrays.
 
 ## Installation
 
@@ -57,8 +57,10 @@ foreach($users as $v) {
 
 ### tasks($options)
 
-Return all tasks If you want to get only one specific task you can provide a `'task_id'` key in `$options`.
+Return all tasks. If you want to get only one specific task you can provide a `'task_id'` key in `$options`.
 
+* **$options** - Associative array
+ * `'task_id'` - Id of a specific task to get.
 
 ### Time entries
 

@@ -7,6 +7,11 @@
     "email": "oskosk@gmail.com"
   }],
   "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Timecamp\\": ""
+    }
+  },
   "require": {
     "guzzlehttp/guzzle": "^6.0"
   },

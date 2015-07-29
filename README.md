@@ -10,8 +10,6 @@ $ composer require osk/timecamp-client
 
 ## Usage
 
-[Full Doc](https://github.com/oskosk/php-timecamp-client)
-
 ```php
 
 $timecamp = new Timecamp\Client("52253438676fd6dffe7a636f0e");
@@ -75,15 +73,15 @@ _Alias for `timeEntries($options)`_
 Get time entries started in a specific time range.
 
 * **$options** - Associative array
- * `'from'` - date range of the time entries returned.
- * `'to'` - date range of the time entries returned.
+ * `'from'` - date range of the time entries returned like 2015-06-30.
+ * `'to'` - date range of the time entries returned like 2015-06-30.
  * `'task_ids'` *(optional)* - array of tasks ids you can leave this option undefined, so it will get all tasks.
  * `'with_subtasks'` - *(optional)* - If set to `'1'` , get entries for all subtasks for provided one specific task_ids. **Default**: `'1'`.
  * `'user_ids'` - *(optional)* - Array of user ids. you can leave this option undefined, so it willl get all users
 
 **Returns** an array of time entries associative arrays.
 
-*Example*
+**Example**
 
 ```php
 $entries = $client->timeEntries(array(
@@ -92,6 +90,44 @@ $entries = $client->timeEntries(array(
 ));
 // var_dump($entries);
 foreach($entries as $v) {
+  var_dump($v);
+}
+```
+
+#### timerRunning()
+
+Get currently running timers.
+
+*Example*
+
+```php
+$timers = $client->timeRunning();
+// var_dump($timers);
+foreach($timers as $v) {
+  var_dump($v);
+}
+```
+
+#### entriesChanges($options)
+
+Get manual changes in time entries made by users. This is only available only when it is enabled in Account Settings.
+
+* **$options** - Associative array
+ * `'from'` - date range of the time entries returned like 2014-03-19.
+ * `'to'` - date range of the time entries returned like 2014-03-19.
+ * `'task_ids'` *(optional)* - array of tasks ids you can leave this option undefined, so it will get all tasks.
+ * `'user_ids'` - *(optional)* - Array of user ids. you can leave this option undefined, so it willl get all users
+ * `'limit'` - *(optional)* - Limit for the number of rows (you can put any number like 100.
+
+**Examples**
+
+```php
+$changes= $timecamp->entriesChanges(array(
+  'from'=> '2015-06-01',
+  'to'=> '2015-06-30'
+));
+// var_dump($changes);
+foreach($changes as $v) {
   var_dump($v);
 }
 ```

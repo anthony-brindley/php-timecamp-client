@@ -1,6 +1,6 @@
 <?php
 
-require "index.php" ;
+require "Client.php" ;
 
 $api_token = trim(file_get_contents("tests-api-token.txt"));
 

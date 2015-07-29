@@ -135,6 +135,18 @@ foreach($changes as $v) {
 }
 ```
 
+##Environment variables
+
+**HTTP_PROXY**
+
+Defines the proxy to use when sending requests using the "http" protocol.
+
+**HTTPS_PROXY**
+
+Defines the proxy to use when sending requests using the "https" protocol.
+
+
+
 ## License
 
 Distributed under the MIT License.

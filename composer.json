@@ -1,0 +1,7 @@
+{
+    "name": "oskosk/timecamp-client",
+    "description": "A Timecamp API client",
+    "require": {
+        "guzzlehttp/guzzle": "^6.0"
+    }
+}

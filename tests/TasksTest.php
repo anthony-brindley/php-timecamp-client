@@ -5,11 +5,8 @@ class Tasks extends PHPUnit_Framework_TestCase
 
     public function testAccessDenied()
     {
-      //throw new Exception("asd");
-        // Arrange
         $timecamp = new Timecamp\Client("asdasd");
 
-        // Assert
         try {
         $timecamp->tasks();
 
@@ -21,11 +18,8 @@ class Tasks extends PHPUnit_Framework_TestCase
 
     public function testTasksReturnsArray()
     {
-      //throw new Exception("asd");
-        // Arrange
         $timecamp = new Timecamp\Client(get_key());
 
-        // Assert
         $tasks = $timecamp->tasks();
         $this->assertEquals(gettype($tasks), 'array');
 
@@ -34,14 +28,12 @@ class Tasks extends PHPUnit_Framework_TestCase
     public function testEntriesReturnsArray()
     {
       //throw new Exception("asd");
-        // Arrange
         $timecamp = new Timecamp\Client(get_key());
 
-        // Assert
-        $entries= $timecamp->timeEntries(array(
+        $entries= $timecamp->timeEntries([
           'from'=> '2015-06-01',
           'to'=> '2015-06-30'
-        ));
+        ]);
 
         $this->assertEquals(gettype($entries), 'array');
 
@@ -49,14 +41,32 @@ class Tasks extends PHPUnit_Framework_TestCase
 
     public function testEntriesRunningReturnsArray()
     {
-      //throw new Exception("asd");
-        // Arrange
         $timecamp = new Timecamp\Client(get_key());
 
-        // Assert
         $timers= $timecamp->timerRunning();
 
         $this->assertEquals(gettype($timers), 'array');
+
+    }
+
+    public function testUsersReturnsArray()
+    {
+        $timecamp = new Timecamp\Client(get_key());
+        $users= $timecamp->users();
+
+        $this->assertEquals(gettype($users), 'array');
+
+    }
+
+    public function testEntriesChangesReturnsArray()
+    {
+        $timecamp = new Timecamp\Client(get_key());
+        $changes= $timecamp->entriesChanges([
+          'from'=> '2015-06-01',
+          'to'=> '2015-06-30'
+        ]);
+
+        $this->assertEquals(gettype($changes), 'array');
 
     }
 
